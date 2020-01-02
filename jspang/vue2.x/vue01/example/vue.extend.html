@@ -12,9 +12,19 @@
 <body>
     <h1>v-extend</h1>
     <hr>
+    <author></author>
 
     <script>
-        
+        var authorExtend = Vue.extend({
+            template: "<p><a :href='authorUrl'>{{authorName}}</a></p>",
+            data: function () {
+                return {
+                    authorName: "jspang",
+                    authorUrl: "//www.baidu.com"
+                }
+            }
+        })
+        new authorExtend().$mount("author")
     </script>
 </body>
 
