@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/js/vue.js"></script>
+    <title>Document</title>
+    <style>
+        .classA {
+            color: red;
+        }
+
+        .classB {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>v-bind</h1>
+    <hr>
+    <div id="app">
+        <img v-bind:src="imgSrc" alt="" width="200px" />
+        <a :href="urlBaidu" target="_blank">baidu</a>
+        <hr>
+        <div :class="className">1 绑定class</div>
+        <div :class="{classA:isOK}">2 绑定class中的判断</div>
+        <div :class="classA,classB">3 绑定class中的数据</div>
+        <div :class="isOK?classA:classB">4 绑定class中的三元运算符</div>
+        <hr>
+        <div>
+            <input type="checkbox" id="isOK" v-model="isOK">
+            <label for="isOK">isOK={{isOK}}</label>
+        </div>
+        <hr>
+        <div :style="{color: red,fontSize: font}">5 绑定style</div>
+        <div :style="styleObj">6 绑定style对象</div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                imgSrc: "https://user-gold-cdn.xitu.io/2018/5/3/16325a6fe72b390b?w=650&h=910&f=png&s=341354",
+                urlBaidu: "//www.baidu.com",
+                className: "classA",
+                isOK: true,
+                classA: "classA",
+                classB: "classB",
+                red: "red",
+                font: "20px",
+                styleObj: {
+                    color: "green",
+                    fontSize: "20px"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

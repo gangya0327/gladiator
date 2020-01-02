@@ -16,10 +16,15 @@
         <ul>
             <li v-for="item in items">{{item}}</li>
         </ul>
-        <div>{{message}}</div>
-        <!-- <ul>
-            <li v-for="reitem in reverseItems">{{reitem}}</li>
-        </ul> -->
+        <div>{{message1}}</div>
+        <ul>
+            <li v-for="item in sortItems">{{item}}</li>
+        </ul>
+        <ul>
+            <li v-for="(stu,index) in sortStudents">
+                {{index+1}} {{stu.name}} - {{stu.age}}
+            </li>
+        </ul>
     </div>
 
     <script>
@@ -27,20 +32,43 @@
             el: "#app",
             data: {
                 items: [53, 26, 85, 19, 43, 52, 63],
-                message: "hello"
+                message: "hello",
+                students: [
+                    { name: "peter", age: 20 },
+                    { name: "raven", age: 16 },
+                    { name: "jack", age: 66 }
+                ]
             },
             computed: {
+                // computed中的属性和data中的属性名字不能相同，一个属性要么在data里；要么在computed里，computed里的属性要跟data中的配合使用
                 items: function () {
-                    return [1, 2, 3, 4, 5, 6, 7];
+                    return [1, 2, 3, 4, 5, 6, 7]
                 },
-                message: function(){
-                    return "world"
+                sortItems: function () {
+                    return this.items.sort(sortNumber)
+                },
+                message1: function() {
+                    return "world".slice(1)
+                },
+                sortStudents: function() {
+                    return sortByKey(this.students, 'age')
                 }
                 // reverseItems: function(){
                 //     return this.items.reverse()
                 // }
             }
         })
+
+        function sortNumber(a, b) {
+            return a - b
+        }
+        function sortByKey(array, key) {
+            return array.sort(function (a, b) {
+                var x = a[key]
+                var y = b[key]
+                return ((x < y) ? -1 : ((x > y) ? 1 : 0))
+            })
+        }
     </script>
 </body>
 
