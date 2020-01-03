@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/js/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>vue.component2</h1>
+    <hr>
+    <div id="app">
+        <panda :where="message" is-animal="yes"></panda>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                message: "chinas"
+            },
+            components: {
+                "panda": {
+                    template: `<h2 style="color: green">panda from {{where}}, {{isAnimal}}</h2>`,
+                    props: ["where", "isAnimal"]
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
