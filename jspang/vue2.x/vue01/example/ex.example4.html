@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/js/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>example4</h1>
+    <hr>
+    <div id="app">
+        <jspang2>
+            <span slot="blogUrl">{{jsdata.blogUrl}}</span>
+            <span slot="name">{{jsdata.name}}</span>
+            <span slot="skill">{{jsdata.skill}}</span>
+        </jspang2>
+    </div>
+    <template id="temp">
+        <div>
+            <p>博客地址：<slot name="blogUrl"></slot>
+            </p>
+            <p>姓名：<slot name="name"></slot>
+            </p>
+            <p>技术：<slot name="skill"></slot>
+            </p>
+        </div>
+    </template>
+
+    <script>
+        var jspang1 = {
+            template: "#temp"
+        }
+        var app = new Vue({
+            el: "#app",
+            components: {
+                "jspang2": jspang1
+            },
+            data: {
+                jsdata: {
+                    blogUrl: "www.baidu.com",
+                    name: "jspang",
+                    skill: "web"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

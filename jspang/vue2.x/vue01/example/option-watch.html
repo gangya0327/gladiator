@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/js/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>option-watch</h1>
+    <hr>
+    <div id="app">
+        <p>今日温度：{{temperature}}</p>
+        <p>穿衣建议：{{clothes}}</p>
+        <p>
+            <button @click="add">升温</button>
+            <button @click="reduce">降温</button>
+        </p>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                temperature: 14,
+                clothes: "夹克"
+            },
+            methods: {
+                add: function () {
+                    this.temperature += 3
+                },
+                reduce: function () {
+                    this.temperature -= 2
+                }
+            },
+            // watch: {
+            //     temperature: function (newVal, oldVal) {
+            //         if (newVal > 26) {
+            //             this.clothes = "短袖"
+            //         } else {
+            //             this.clothes = "长袖"
+            //         }
+            //     }
+            // }
+        })
+        app.$watch("temperature", function (newVal, oldVal) {
+            if (newVal > 26) {
+                this.clothes = "短袖"
+            } else {
+                this.clothes = "长袖"
+            }
+        })
+    </script>
+</body>
+
+</html>

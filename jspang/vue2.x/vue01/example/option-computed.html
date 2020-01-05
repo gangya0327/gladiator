@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/js/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>option-computed</h1>
+    <hr>
+    <div id="app">
+        <p></p>{{newPrice}}
+        <ul>
+            <li v-for="item in reversenNewslist">{{item.title}}-{{item.date}}</li>
+        </ul>
+    </div>
+
+
+
+    <script>
+        var newsList = [
+            { title: "orem ipsum dolor sit amet.", date: "2019-1-4" },
+            { title: "adipisicing elit. Animi aperiam, omet.", date: "2019-2-18" },
+            { title: "am, odio molestias nisi error met.", date: "2018-11-3" },
+            { title: "o! Neque, id voluptates. Tenetuet.", date: "2018-7-2" },
+        ]
+        var app = new Vue({
+            el: "#app",
+            data: {
+                "price": 100,
+                newsList: newsList
+            },
+            computed: {
+                newPrice: function () {
+                    return this.price = "¥" + this.price + "元"
+                },
+                reversenNewslist: function () {
+                    return this.newsList.reverse()
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

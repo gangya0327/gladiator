@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../assets/js/vue.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>example3</h1>
+    <hr>
+    <div id="app">
+        {{num}}
+        <button @click="add()">add</button>
+    </div>
+    <button onclick="reduce()">reduce</button>
+    <button onclick="reduceOnce()">reduceOnce</button>
+    <button onclick="off()">off</button>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                num: 1
+            },
+            methods: {
+                add: function () {
+                    this.num++
+                }
+            }
+        })
+        app.$on("reduce", function () {
+            console.log("执行了reduce方法")
+            this.num--
+        })
+        app.$once("reduceOnce", function () {
+            console.log("reduceOnce")
+            this.num--
+        })
+        function reduce() {
+            app.$emit("reduce")
+        }
+        function reduceOnce() {
+            app.$emit("reduceOnce")
+        }
+        function off() {
+            app.$off("reduce")
+        }
+    </script>
+</body>
+
+</html>
