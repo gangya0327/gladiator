@@ -4,11 +4,17 @@
   "description": "webpack base",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "webpack-dev-server"
   },
   "author": "raven",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^3.6.0"
+    "css-loader": "^3.4.1",
+    "style-loader": "^1.1.2",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
   }
 }
