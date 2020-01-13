@@ -1,0 +1,60 @@
+#zheng {
+    width: 0;
+    height: 0;
+    border-top: 0 solid transparent;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid red;
+}
+
+#wubian {
+    width: 55px;
+    height: 0px;
+    margin: 50px auto;
+    border-top: 50px solid #0aa;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    position: relative;
+}
+
+#wubian::before {
+    position: absolute;
+    top: -85px;
+    left: -18px;
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    border-bottom: 35px solid #00a;
+}
+
+#liubian {
+    width: 80px;
+    height: 50px;
+    background-color: #0aa;
+    margin: 50px auto;
+    position: relative;
+}
+
+#liubian::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -30px;
+    border-bottom: 30px solid #00a;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+}
+
+#liubian::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: -30px;
+    border-top: 30px solid #00a;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+}
