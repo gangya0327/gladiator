@@ -1,0 +1,101 @@
+.cover {
+  position: relative !important;
+  width: 100%;
+}
+.bindBody {
+  width: 100%;
+  background-color: #fff;
+}
+.bindPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 10%;
+}
+.bindBody .loading {
+  text-align: center;
+  padding-top: 20%;
+}
+.myInput {
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+}
+.myInput input {
+  margin: 10px 0;
+  line-height: 30px;
+  padding: 5px 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+.myInput input:disabled {
+  background-color: #fff;
+  border-bottom: none;
+}
+.bindType {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+}
+.bindType input {
+  width: auto;
+}
+.columnCenter {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+.validDiv {
+  position: relative;
+}
+.myInput .validDiv input {
+  width: -webkit-fill-available;
+}
+.validDiv button {
+  position: absolute;
+  width: 100px;
+  right: 0;
+  bottom: 13px;
+  height: 35px;
+}
+.bindBtn {
+  width: 90%;
+  margin-top: 10px;
+  height: 40px;
+  background-color: #5f96e7;
+  color: #fff;
+  border: none;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+.bindBtn:disabled {
+  opacity: 0.4;
+}
+
+.bindResult,
+.unbindPage {
+  text-align: center;
+  padding-top: 10%;
+}
+.bindResult p,
+.unbindPage p {
+  color: #777;
+  margin: 50px 5% 30px;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.bindResult p img,
+.unbindPage p img {
+  margin-right: 10px;
+}

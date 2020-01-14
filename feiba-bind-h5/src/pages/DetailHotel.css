@@ -1,0 +1,107 @@
+.order-hotel .order-title {
+    text-align: center;
+    height: 45px;
+    background-color: #51a6f0;
+    color: #fff;
+    line-height: 45px;
+}
+.order-hotel .order-header-container {
+    width: 100%;
+    background-color: #fff;
+}
+.order-hotel .order-header {
+    display: flex;
+    padding: 15px 15px 10px;
+    flex-direction: column;
+    border-top: 8px solid rgb(236, 236, 237);
+}
+.order-hotel .hotel-name {
+    padding-bottom: 10px;
+}
+.order-hotel .hotel-info {
+    font-size: 12px;
+    color: rgb(121, 127, 133);
+}
+.order-hotel .hotel-address {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    border-top: 1px solid rgb(236, 236, 237);
+    line-height: 16px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.order-hotel .hotel-address img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.order-hotel .order-status-body {
+    padding: 10px 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+.order-hotel .order-status-container {
+    width: 100%;
+}
+.order-hotel .order-status,
+.order-hotel .order-pay {
+    color: #e26a6a!important;
+    font-size: 18px!important;
+    margin-bottom: 10px!important;
+}
+.order-hotel .order-status-info div {
+    color: rgb(121, 127, 133);
+    font-size: 11px;
+    margin-top: 5px;
+}
+.order-hotel .order-time {
+    display: flex;
+    background: #fff;
+    margin-top: 10px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+.order-hotel .order-time .check-time>div {
+    color: rgb(121, 127, 133);
+}
+.order-hotel .order-time .check-time>div>div {
+    display: inline-block;
+    margin-left: 10px;
+}
+.order-hotel .decline-arrive {
+    color: rgb(244,200,134);
+}
+.order-hotel .order-customers,
+.order-hotel .order-contact {
+    display: flex;
+    background-color: #fff;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
+}
+.order-train .order-contact {
+    background-color: #fff;
+}
+.order-hotel .list-title {
+    color: rgb(121, 127, 133);
+    margin-right: 10px;
+}
+.app-download {
+    background: #fff;
+    text-align: center;
+    font-size: 15px;
+    color: #666;
+    padding-bottom: 10px;
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.app-download a {
+    color: rgb(131,209,248);
+    text-decoration: none;
+}

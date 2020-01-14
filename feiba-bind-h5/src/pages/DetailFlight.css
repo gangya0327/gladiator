@@ -1,0 +1,244 @@
+.cover {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    background-color: #f5f5f9;
+    overflow: auto;
+}
+.order-flight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+}
+.order-flight .order-title {
+    width: 100%;
+    background-color: #51a6f0;
+    color: #fff;
+    text-align: center;
+    height: 45px;
+    line-height: 45px;
+}
+.order-flight .order-header {
+    width: 100%;
+    background-color: #51a6f0;
+}
+.order-flight .order-header-container {
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.order-flight .order-header-body {
+    margin: 0 10px;
+}
+.order-flight .order-header-body>div {
+    width: 33.3%;
+}
+.order-flight .flight-name-date {
+    font-size: 13px;
+    margin: 10px 0;
+    text-align: center;
+}
+.order-flight .flight-time {
+    font-size: 24px;
+    text-align: center;
+}
+.order-flight .flight-port {
+    font-size: 12px;
+    color: rgb(121, 127, 133);
+    margin-top: 13px;
+    text-align: center;
+}
+.order-flight .flight-arrow {
+    margin-top: 35px;
+    text-align: center;
+}
+.order-flight .flight-arrow img {
+    width: 50px;
+}
+.order-flight .flight-arrow div:first-of-type {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.order-flight .flight-arrow div {
+    font-size: 11px;
+    color: rgb(121, 127, 133);
+}
+.order-flight .flight-rule {
+    color: rgb(81, 166, 240);
+    font-size: 11px;
+    padding: 10px;
+    margin: 0;
+    border-top: 0.5px dashed gray;
+}
+.order-flight .order-status-body {
+    padding: 10px 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 8px solid rgb(236, 236, 237);
+    background-color: #fff;
+}
+.order-flight .order-status-container {
+    width: 100%;
+}
+.order-flight .order-status,
+.order-flight .order-pay {
+    color: #e26a6a!important;
+    font-size: 18px!important;
+    margin-bottom: 10px!important;
+}
+.order-flight .order-status-info div {
+    color: rgb(121, 127, 133);
+    font-size: 11px;
+    margin-top: 5px;
+}
+.order-flight .order-header-body,
+.order-flight .order-passengers,
+.order-flight .order-contact,
+.order-flight  .order-insurances,
+.order-flight .cost-center {
+    display: flex;
+    justify-content: space-between;
+}
+.order-flight .order-passengers-container {
+    width: 100%;
+}
+.order-flight .order-passengers {
+    margin-top: 10px;
+    background-color: #fff;
+}
+.order-flight .list-title {
+    width: 80px;
+    margin-left: 15px;
+    color: rgb(121, 127, 133);
+    font-size: 14px;
+    margin-top: 10px;
+}
+.order-flight .list-passengers {
+    width: 100%;
+}
+.order-flight .passenger-name,
+.order-flight .contact-name {
+    font-weight: bold;
+    color: rgb(51, 59, 67);
+    font-size: 14px;
+    margin-top: 10px;
+}
+.order-flight .passenger-idcard,
+.order-flight .contact-phone {
+    color: rgb(50, 59, 67);
+    font-size: 12px;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+.order-flight .passenger-ticketStatus {
+    font-size: 14px;
+    margin-right: 30px;
+    color: rgb(244,200,150);
+}
+.order-flight .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+.order-flight .item:last-child {
+    border-bottom: none;
+}
+.order-flight .order-contact-container {
+    width: 100%;
+}
+.order-flight .order-insurances-container {
+    width: 100%;
+}
+.order-flight .order-insurances {
+    background-color: #fff;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.order-flight .order-insurances .list-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 10px;
+}
+.order-flight .order-contact {
+    background-color: #fff;
+}
+.order-flight .cost-center-container {
+    width: 100%;
+}
+.order-flight .cost-center {
+    background-color: #fff;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+.order-flight .cost-title {
+    color: rgb(121, 127, 133);
+    font-size: 14px;
+    margin-left: 15px;
+}
+.order-flight .cost-name {
+    color: rgb(121, 127, 133);
+    font-size: 11px;
+    margin-right: 15px;
+}
+.showRules {
+    background: rgba(99,99,99,0.4);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.showRules .shadow {
+    background-color: rgba(99,99,99,0.4);
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.showRules .rule-body {
+    background-color: #fff;
+    z-index: 99;
+    padding: 10px;
+    font-size: 14px;
+}
+.showRules .rule-title {
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 5px;
+}
+.showRules .rule-body table {
+    border-collapse: collapse;
+    margin: 5px 0;
+    width: 100%;
+}
+.showRules .rule-body table tr td {
+    border: 1px solid #aaa;
+    padding: 5px;
+}
+.showRules .rule-body table tr td:first-child {
+    width: 65px;
+}
+.showRules .rule-warning {
+    color: #ff7c7c;
+    font-size: 12px;
+}
+.app-download {
+    background: #fff;
+    text-align: center;
+    font-size: 15px;
+    color: #666;
+    padding-bottom: 10px;
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.app-download a {
+    color: rgb(131,209,248);
+    text-decoration: none;
+}
