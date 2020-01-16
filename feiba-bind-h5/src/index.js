@@ -9,7 +9,7 @@ import DetailHotel from './pages/DetailHotel';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-    <BrowserRouter>
+    <BrowserRouter basename="/bind">
         <div className="cover">
             <Route path="/bind" component={BindPage} />
             <Route path="/order/detail/flight" component={DetailFlight} />
