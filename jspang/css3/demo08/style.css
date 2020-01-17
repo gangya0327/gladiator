@@ -1,15 +1,57 @@
-.diamond{
-    width: 200px;
-    height: 200px;
-    background-color: #6fa;
-    margin: 50px auto;
-    transform: rotate(45deg);
+.star {
+    width: 0;
+    height: 0;
+    border-bottom: 70px solid red;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    margin: 150px auto;
+    transform: rotate(35deg);
+    position: relative;
 }
 
-.parallel {
-    width: 200px;
-    height: 100px;
-    background-color: #6fa;
-    margin: 50px auto;
-    transform: skew(20deg, 20deg);
+.star::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom: 80px solid red;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: absolute;
+    transform: rotate(-35deg);
+    top: -45px;
+    left: -64px;
+}
+
+.star::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom: 70px solid red;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    position: absolute;
+    transform: rotate(-70deg);
+    top: 3px;
+    left: -105px;
+}
+
+.six {
+    width: 0;
+    height: 0;
+    border-bottom: 55px solid blue;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    margin: 100px auto;
+    position: relative;
+}
+
+.six::before {
+    content: "";
+    position: absolute;
+    border-bottom: 55px solid blue;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    transform: rotate(180deg);
+    left: -30px;
+    top: 18px;
 }
