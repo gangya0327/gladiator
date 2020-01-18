@@ -1,0 +1,21 @@
+#main {
+    width: 400px;
+    clear: both;
+}
+
+#main li {
+    list-style: none;
+    width: 240px;
+    padding: 1px;
+}
+
+#main li .img img {
+    width: 240px;
+}
+
+.good_title {
+    margin: 10px;
+    color: #666;
+    height: 35px;
+    overflow: hidden;
+}
