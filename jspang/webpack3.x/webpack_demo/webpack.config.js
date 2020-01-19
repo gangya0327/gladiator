@@ -14,26 +14,30 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                // use: ["style-loader", "css-loader"]
-                // loader: ["style-loader", "css-loader"]
-                use: [{
-                    loader: "style-loader"
-                }, {
-                    loader: "css-loader"
-                }]
-            }
+                use: ["style-loader", "css-loader"],
+                use: [
+                    {
+                        loader: "style-loader",
+                        // module: true
+                    },
+                    {
+                        loader: "css-loader",
+                        // module: true
+                    }
+                ]
+                // include:
+                // exclude:
+                // query:
+            },
         ]
     },
     plugins: [
         new uglify()
     ],
-    // optimization: {
-    //     minimizer: [new uglify()]
-    // },
     devServer: {
         contentBase: path.resolve(__dirname, "dist"),
-        host: '192.168.108',
+        host: "192.168.0.106",
         compress: true,
-        port: 1414
+        port: 4444
     }
 }

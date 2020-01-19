@@ -1,4 +1,4 @@
 const path = require("path")
 const uglify = require("uglifyjs-webpack-plugin")
 
-console.log(uglify);
+// console.log(path.resolve(__dirname, "dist"));
