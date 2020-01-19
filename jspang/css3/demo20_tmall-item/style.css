@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "YaHei";
+}
+
+.main {
+    width: 300px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.main li {
+    list-style: none;
+    cursor: pointer;
+}
+
+.m_title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.m_content {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.m_img {
+    position: relative;
+    width: 240px;
+    margin: 0 auto;
+}
+
+.m_img img {
+    position: relative;
+    width: 100%;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.main li:hover .m_img img {
+    transform: scale(1.1);
+}
+
+.m_img::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background-color: #eee;
+    z-index: -1;
+    left: -10px;
+    top: 45px;
+}

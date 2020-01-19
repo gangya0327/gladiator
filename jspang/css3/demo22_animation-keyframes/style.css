@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.rect {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: fixed;
+    animation-name: mymove;
+    animation-duration: 4s;
+    animation-timing-function: ease-in;
+    animation-delay: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes mymove {
+    0% {
+        top: 0%;
+        left: 0%;
+    }
+
+    25% {
+        top: 0%;
+        left: 30%;
+        background-color: green;
+    }
+
+    50% {
+        top: 20%;
+        left: 30%;
+        background-color: blue;
+    }
+
+    75% {
+        top: 20%;
+        left: 0%;
+        background-color: yellow;
+    }
+
+    100% {
+        top: 0;
+        left: 10%;
+        background-color: red;
+    }
+}

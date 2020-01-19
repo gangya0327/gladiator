@@ -1,0 +1,35 @@
+.main {
+    width: 260px;
+    height: 270px;
+    border: 1px solid #ccc;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.m_title {
+    font-size: 20px;
+    padding: 20px 10px 10px;
+}
+
+.m_content {
+    color: #1ca;
+    padding: 0 10px 10px;
+}
+
+.m_img {
+    text-align: right;
+    position: relative;
+}
+
+.m_img img {
+    position: absolute;
+    width: 180px;
+    top: -3px;
+    right: 0;
+    /* transition: transform 0.5s ease; */
+    transition: right 0.5s ease;
+}
+
+.main:hover .m_img img {
+    /* transform: translateX(-20px); */
+    right: 20px;
+}

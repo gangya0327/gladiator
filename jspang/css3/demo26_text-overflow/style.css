@@ -1,0 +1,36 @@
+.demo {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    height: 100px;
+    font-size: 12px;
+    margin: 10px;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.demo1 {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    height: 100px;
+    font-size: 12px;
+    margin: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.demo2 {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    height: 100px;
+    font-size: 12px;
+    margin: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}

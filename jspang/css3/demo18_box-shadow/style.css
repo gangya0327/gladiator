@@ -1,0 +1,25 @@
+body {
+    background-color: #eee;
+}
+
+.ceng {
+    width: 300px;
+    padding: 10px 10px 20px 10px;
+    border: 1px solid #bfbfbf;
+    background-color: #fff;
+    box-shadow: 6px 4px 5px 2px #ccc;
+}
+
+.ceng img {
+    width: 100%;
+}
+
+.rotate-left {
+    float: left;
+    transform: rotate(-10deg);
+}
+
+.rotate-right {
+    float: left;
+    transform: rotate(10deg);
+}
