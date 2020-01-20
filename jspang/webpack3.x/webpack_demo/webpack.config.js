@@ -1,5 +1,6 @@
 const path = require("path")
-const uglify = require("uglifyjs-webpack-plugin")
+const uglifyPlugin = require("uglifyjs-webpack-plugin")
+const htmlPlugin = require("html-webpack-plugin")
 
 module.exports = {
     entry: {
@@ -32,7 +33,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new uglify()
+        new uglifyPlugin()
     ],
     devServer: {
         contentBase: path.resolve(__dirname, "dist"),
