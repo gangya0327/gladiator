@@ -3,3 +3,9 @@ body {
     color: #fff;
     font-size: 30px;
 }
+
+#picture {
+    background-image: url(../images/cake.jpg);
+    width: 200px;
+    height: 180px;
+} 

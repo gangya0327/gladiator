@@ -1,0 +1,8 @@
+$nav-color: skyblue;
+#nav {
+    $width: 300px;
+    width: $width;
+    height: 30px;
+    background-color: $nav-color;
+    font-size: 18px;
+}

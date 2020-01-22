@@ -1,1 +1,0 @@
-console.log("webpack is good");
