@@ -8,4 +8,12 @@ body {
     background-image: url(../images/cake.jpg);
     width: 200px;
     height: 180px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-box-shadow: 1px 1px 0 #ccc;
+            box-shadow: 1px 1px 0 #ccc;
 } 
+#aa {
+    background: #aaa;
+    color: #fff;
+}

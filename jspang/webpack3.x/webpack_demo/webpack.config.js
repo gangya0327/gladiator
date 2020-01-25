@@ -1,7 +1,9 @@
 const path = require("path")
+const glob = require("glob")
 const uglifyPlugin = require("uglifyjs-webpack-plugin")
 const htmlPlugin = require("html-webpack-plugin")
 const extractTextPlugin = require("extract-text-webpack-plugin")
+const PurifyCSSPlugin = require("purifycss-webpack")
 
 var website = {
     publicPath: "http://192.168.0.103:4444/"
@@ -32,7 +34,14 @@ module.exports = {
                 //     }
                 // ]
                 use: extractTextPlugin.extract({
-                    use: "css-loader",
+                    use: [
+                        {
+                            loader: "css-loader",
+                            options: { importLoaders: 1 },
+                        },
+                        "postcss-loader"
+
+                    ],
                     fallback: "style-loader",
                 })
                 // include:
@@ -89,6 +98,15 @@ module.exports = {
                     }],
                     fallback: "style-loader"
                 })
+            }, {
+                test: /\.(jsx|js)$/,
+                use: {
+                    loader: "babel-loader",
+                    // options: {
+                    //     presets: ["es2015", "react"]
+                    // }
+                },
+                exclude: /node_modules/
             }
         ]
     },
@@ -101,7 +119,10 @@ module.exports = {
             hash: true,
             template: "./src/index.html"
         }),
-        new extractTextPlugin("css/index.css")
+        new extractTextPlugin("css/index.css"),
+        new PurifyCSSPlugin({
+            paths: glob.sync(path.join(__dirname, "src/*.html"))
+        })
     ],
     devServer: {
         contentBase: path.resolve(__dirname, "dist"),

@@ -1,16 +1,27 @@
-body {
-    background: #aaa;
-    color: #fff;
-    font-size: 30px;
-}
-
-#picture {
-    background-image: url(http://192.168.0.103:4444/images/d41de3f1bf2464927de86b48ab934672.jpg);
-    width: 200px;
-    height: 180px;
-} #gogo {
+#gogo {
   width: 300px;
   height: 200px;
   background-color: #000;
 }
-#nav{width:300px;height:30px;background-color:skyblue;font-size:18px}
+
+#nav {
+  width: 300px;
+  height: 30px;
+  background-color: skyblue;
+  font-size: 18px;
+}
+
+body {
+  background: #aaa;
+  color: #fff;
+  font-size: 30px;
+}
+
+#picture {
+  background-image: url(http://192.168.0.103:4444/images/d41de3f1bf2464927de86b48ab934672.jpg);
+  width: 200px;
+  height: 180px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  box-shadow: 1px 1px 0 #ccc;
+}
