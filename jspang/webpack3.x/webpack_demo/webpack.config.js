@@ -4,15 +4,30 @@ const uglifyPlugin = require("uglifyjs-webpack-plugin")
 const htmlPlugin = require("html-webpack-plugin")
 const extractTextPlugin = require("extract-text-webpack-plugin")
 const PurifyCSSPlugin = require("purifycss-webpack")
+const entry = require("./webpack_config/entry_webpack")
+const webpack = require("webpack")
 
-var website = {
-    publicPath: "http://192.168.0.103:4444/"
+console.log("现在的环境是：" + encodeURIComponent(process.env.type));
+
+if (process.env.type == "build") {
+    var website = {
+        publicPath: "http://raven.com:4444/"
+    }
+} else {
+    var website = {
+        publicPath: "http://192.168.0.102:4444/"
+    }
 }
 
 module.exports = {
-    entry: {
-        entry: "./src/entry.js",
-    },
+    devtool: "source-map",
+    /*
+    source-map 独立文件map 打印 行:列
+    cheap-module-source-map 独立文件map 打印 行
+    eval-source-map 无独立文件 打印 行:列
+    cheap-module-eval-source-map 无独立文件 打印 行
+    */
+    entry: entry.path,
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "[name].js",
@@ -122,12 +137,24 @@ module.exports = {
         new extractTextPlugin("css/index.css"),
         new PurifyCSSPlugin({
             paths: glob.sync(path.join(__dirname, "src/*.html"))
-        })
+        }),
+        new webpack.ProvidePlugin({
+            "$": "jquery"
+        }),
+        new webpack.BannerPlugin("raven copyright")
     ],
     devServer: {
         contentBase: path.resolve(__dirname, "dist"),
-        host: "192.168.0.103",
+        host: "192.168.0.102",
         compress: true,
         port: 4444
+    },
+    watchOptions: {
+        poll: 1000, //检测代码修改时间，以毫秒为单位
+        // aggregeateTimeout: 500, 
+        //防止重复保存而发生重复编译错误，这里设置的500为半秒内重复保存，不进行打包操作
+        ignored: /node_modules/ //不监听目录，使用正则匹配
     }
 }
+
+// http://caibaojian.com/fe-daily-20200128.html

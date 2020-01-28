@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "webpack-dev-server --open",
-    "build": "webpack"
+    "server": "webpack-dev-server --open-watch",
+    "build": "export type=build && webpack",
+    "dev": "export type=dev && webpack"
   },
   "author": "raven",
   "license": "ISC",
@@ -35,5 +36,8 @@
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1"
   }
 }
