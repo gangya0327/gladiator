@@ -12,3 +12,6 @@ import raven from "./raven"
 raven.sayhi()
 
 $("#title").html("hello jquery222")
+
+var json = require("../config.json")
+$("#json").html(json.name)

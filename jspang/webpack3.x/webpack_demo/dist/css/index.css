@@ -19,11 +19,10 @@ body {
 }
 
 #picture {
-  background-image: url(http://192.168.0.102:4444/images/d41de3f1bf2464927de86b48ab934672.jpg);
+  background-image: url(http://192.168.0.101:4444/images/d41de3f1bf2464927de86b48ab934672.jpg);
   width: 200px;
   height: 180px;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   box-shadow: 1px 1px 0 #ccc;
 }
-/*# sourceMappingURL=index.css.map*/

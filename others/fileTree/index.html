@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+  <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="http://www.treejs.cn/v3/js/jquery.ztree.core.js"></script>
+  <link rel="stylesheet" href="http://www.treejs.cn/v3/css/zTreeStyle/zTreeStyle.css">
+
+  <link rel="stylesheet" href="./css/index.css">
+  <script src="./js/index.js"></script>
+
+
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">首页</a></li>
+      <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">工作文件</a></li>
+      <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">项目文件</a></li>
+      <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">查询文件</a></li>
+      <li role="presentation" class="active"><a href="#exercise" aria-controls="exercise" role="tab" data-toggle="tab">每日一练</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane " id="home">.1..</div>
+      <div role="tabpanel" class="tab-pane" id="profile">..2.</div>
+      <div role="tabpanel" class="tab-pane" id="messages">.3..</div>
+      <div role="tabpanel" class="tab-pane" id="settings">.4..</div>
+      <div role="tabpanel" class="tab-pane active" id="exercise">
+
+        <div class="content">
+          <div class="left">
+            <ul id="tree" class="ztree" style="width:230px; overflow:auto;"></ul>
+          </div>
+
+          <div class="right">
+            <div class="fileMenu">
+                <h3>文件目录</h3>
+                <ul id="menuList">
+                  <li><a href="Excel函数_合并两个表格很简单.docx">Excel函数_合并两个表格很简单</a></li>
+                  <li><a href="Excel函数_合并两个表格很简单.docx">Excel函数_合并两个表格很简单</a></li>
+                  <li><a href="Excel函数_合并两个表格很简单.docx">Excel函数_合并两个表格很简单</a></li>
+                  <li><a href="Excel函数_合并两个表格很简单.docx">Excel函数_合并两个表格很简单</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</body>
+
+</html>

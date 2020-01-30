@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    background-image: url(../images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 1100px;
+    height: 100vh;
+    margin: 20px auto;
+}
+
+.nav-tabs {
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+    background-color: rgb(197, 94, 94);
+    color: #fff;
+}
+
+.left {
+    padding: 20px 10px;
+    background-color: rgb(108, 175, 213);
+
+}
+
+.right {
+    padding: 20px 10px;
+    width: 100%;
+    margin-left: 10px;
+    background-color: rgb(181, 172, 221);
+}
+
+.fileMenu{
+    border: 1px solid #eee;
+    height: 100%;
+    padding: 0 60px;
+}
+
+#menuList {
+    
+}
+
+#menuList li a {
+    color: rgb(65, 27, 27);
+    line-height: 20px;
+}
+
+.content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex !important;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.ztree {
+    border: 1px solid #eee;
+    height: calc(100vh - 160px);
+    zoom: 1.1;
+}
+
+.ztree * {
+    font-size: 14px;
+}
+
+.ztree li {
+    line-height: 14px;
+}
