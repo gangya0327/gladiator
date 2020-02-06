@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="show">hello world</div>
+        <div v-else>bye bye</div>
+        <div v-if="str=='a'">str a</div>
+        <div v-else-if="str=='b'">str b</div>
+        <div v-else>str ?</div>
+        <div v-show="show">hello world</div>
+
+        <div v-if="show">
+            用户名 <input type="text">
+        </div>
+        <div v-else>
+            邮箱名 <input type="text">
+        </div>
+
+        <button @click="handleShow">show/hide</button>
+    </div>
+
+    <script src="./vue.js"></script>
+    <script>
+
+        var app = new Vue({
+            el: "#app",
+            data: {
+                show: false,
+                str: "c"
+            },
+            methods: {
+                handleShow: function () {
+                    this.show = !this.show
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

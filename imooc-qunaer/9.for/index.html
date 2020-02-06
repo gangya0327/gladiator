@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div v-for="(item, index) of list">
+            {{index}} - {{item}}
+        </div>
+        <hr>
+        <template v-for="(item, index) of listObj" :key="item.id">
+            <div>{{item.text}} - {{index}}</div>
+            <span>{{item.text}}</span>
+        </template>
+        <hr>
+        <div v-for="(item, key, index) of userInfo">
+            {{item}} - {{key}} - {{index}}
+        </div>
+    </div>
+
+
+    <script src="./vue.js"></script>
+    <script>
+
+        var app = new Vue({
+            el: "#app",
+            data: {
+                list: ["hello", "nice", "to", "meet", "you"],
+                listObj: [{
+                    id: 1,
+                    text: "raven"
+                }, {
+                    id: 2,
+                    text: "peter"
+                }, {
+                    id: 3,
+                    text: "jack"
+                }],
+                userInfo: {
+                    name: "raven",
+                    age: 29,
+                    email: "123@qq.com"
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

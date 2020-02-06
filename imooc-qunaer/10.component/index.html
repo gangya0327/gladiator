@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <table>
+            <tbody>
+                <tr is="row"></tr>
+                <tr is="row"></tr>
+                <tr is="row"></tr>
+            </tbody>
+        </table>
+
+        <counter ref="num1" @change="handleChange"></counter>
+        <counter ref="num2" @change="handleChange"></counter>
+        <div>{{total}}</div>
+    </div>
+
+
+    <script src="./vue.js"></script>
+    <script>
+
+        Vue.component("row", {
+            data: function () {
+                return {
+                    text: "ttttt"
+                }
+            },
+            template: `<tr><td>{{text}}</td></tr>`
+        })
+        Vue.component("counter", {
+            data: function () {
+                return {
+                    num: 0
+                }
+            },
+            template: `<div @click="handleClick">{{num}}</div>`,
+            methods: {
+                handleClick: function () {
+                    this.num++
+                    this.$emit("change")
+                }
+            }
+        })
+        var app = new Vue({
+            el: "#app",
+            data: {
+                total: 0
+            },
+            methods: {
+                handleChange: function () {
+                    this.total = this.$refs.num1.num + this.$refs.num2.num
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
