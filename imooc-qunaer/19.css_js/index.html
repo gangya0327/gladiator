@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <transition name="fade" @before-enter="handleBeforEnter" @enter="handleEnter" @after-enter="handleAfterEnter">
+            <div v-show="show">hello</div>
+        </transition>
+        <button @click="handleClick">change</button>
+    </div>
+
+    <script src="./vue.js"></script>
+    <script src="./velocity.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                show: true
+            },
+            methods: {
+                handleClick: function () {
+                    this.show = !this.show
+                },
+                handleBeforEnter: function (el) {
+                    el.style.opacity = 0
+                },
+                handleEnter: function (el, done) {
+                    Velocity(el, { opacity: 1 }, { duration: 1000, complete: done })
+                },
+                handleAfterEnter: function (el) {
+                    console.log("end");
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

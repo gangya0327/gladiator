@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .v-enter,
+        .v-leave-to {
+            opacity: 0;
+        }
+
+        .v-enter-active,
+        .v-leave-active {
+            transition: opacity 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <fade :show="show">
+            <div>hello</div>
+        </fade>
+        <fade :show="show">
+            <h1>hello</h1>
+        </fade>
+        <button @click="handleClick">change</button>
+    </div>
+
+    <script src="./vue.js"></script>
+    <script>
+        Vue.component("fade", {
+            props: ['show'],
+            template: `
+                <transition @before-enter="handleBeforeEnter" @enter="handleEnter">
+                    <slot v-if="show"></slot>
+                </transition>
+            `,
+            methods: {
+                handleBeforeEnter: function (el) {
+                    el.style.color = "red"
+                },
+                handleEnter: function (el, done) {
+                    setTimeout(() => {
+                        el.style.color = "green"
+                        done()
+                    }, 2000);
+                }
+            }
+        })
+        var app = new Vue({
+            el: "#app",
+            data: {
+                show: true
+            },
+            methods: {
+                handleClick: function () {
+                    this.show = !this.show
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>

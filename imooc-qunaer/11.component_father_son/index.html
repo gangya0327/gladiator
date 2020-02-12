@@ -10,8 +10,9 @@
 
 <body>
     <div id="app">
-        <counter :count="0"></counter>
-        <counter :count="1"></counter>
+        <counter :count="1" @change="handleChange"></counter>
+        <counter :count="2" @change="handleChange"></counter>
+        <div>{{total}}</div>
     </div>
 
 
@@ -19,10 +20,29 @@
     <script>
         Vue.component("counter", {
             props: ["count"],
-            template: "<div>{{count}}</div>"
+            data: function () {
+                return {
+                    number: this.count
+                }
+            },
+            template: "<div @click='handleClick'>{{number}}</div>",
+            methods: {
+                handleClick: function () {
+                    this.number += 3
+                    this.$emit("change", 3)
+                }
+            }
         })
         var app = new Vue({
             el: "#app",
+            data: {
+                total: 5
+            },
+            methods: {
+                handleChange: function (val) {
+                    this.total += val
+                }
+            }
         })
     </script>
 </body>

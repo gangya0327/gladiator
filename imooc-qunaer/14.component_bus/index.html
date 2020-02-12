@@ -1,0 +1,112 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <child content="hello"></child>
+        <child content="world"></child>
+    </div>
+
+
+    <script src="./vue.js"></script>
+    <script>
+        Vue.prototype.bus = new Vue()
+
+        Vue.component("child", {
+            data: function () {
+                return {
+                    self_content: this.content
+                }
+            },
+            props: {
+                content: {
+                    type: String
+                }
+            },
+            template: "<div @click='handleClick'>{{self_content}}</div>",
+            methods: {
+                handleClick: function () {
+                    this.bus.$emit("change", this.content)
+                }
+            },
+            mounted: function () {
+                var this_ = this
+                this.bus.$on("change", function (val) {
+                    this_.self_content = val
+                })
+            }
+        })
+
+        var app = new Vue({
+            el: "#app",
+            methods: {
+                handleClick: function () {
+                    console.log("click");
+                }
+            }
+        })
+    </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <com text="raven"></com>
+        <com text="peter"></com>
+    </div>
+
+    <script>
+
+        Vue.prototype.bus = new Vue()
+
+        Vue.component("com", {
+            data: function () {
+                return {
+                    mytext: this.text
+                }
+            },
+            props: {
+                text: {
+                    type: String
+                }
+            },
+            template: "<span @click='handleClick'>{{mytext}}</span>",
+            methods: {
+                handleClick: function () {
+                    this.bus.$emit("change", this.text)
+                }
+            },
+            mounted: function () {
+                var that = this
+                this.bus.$on("change", function (val) {
+                    that.mytext = val
+                })
+            }
+        })
+
+        var app = new Vue({
+            el: "#app",
+        })
+    </script>
+</body>
+
+</html>

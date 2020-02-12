@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./animate.css">
+    <title>Document</title>
+    <style>
+        .fade-enter,
+        .fade-leave-to {
+            opacity: 0;
+        }
+
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity 3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <transition name="fade" appear appear-active-class="animated swing" enter-active-class="animated swing  fade-enter-active"
+            leave-active-class="animated shake  fade-leave-active" type="transition" :duration="{enter: 5000,leave: 10000}">
+            <div v-if="show">hello</div>
+        </transition>
+        <button @click="handleClick">change</button>
+    </div>
+
+    <script src="./vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                show: true
+            },
+            methods: {
+                handleClick: function () {
+                    this.show = !this.show
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
