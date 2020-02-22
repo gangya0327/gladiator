@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import List from '../views/List.vue'
 import Detail from '../views/Detail.vue'
+import store from '../store'
 
 Vue.use(VueRouter)
 
@@ -35,7 +36,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
     beforeEnter(to, from, next) {
       // 判断是否登录
-      if (!window.isLogin) {
+      if (!store.state.isLogin) {
         next("/login?redirect=" + to.path)
       } else {
         next()

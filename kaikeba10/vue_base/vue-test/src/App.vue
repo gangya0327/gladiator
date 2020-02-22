@@ -1,13 +1,24 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/login">Login</router-link>
+      <router-link to="/">Home</router-link>|
+      <router-link to="/about">About</router-link>|
+      <router-link to="/login" v-if="!isLogin">Login</router-link>
+      <span v-else>欢迎回来</span>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
+
+<script>
+import { mapState } from 'vuex'
+
+export default {
+  computed: {
+    ...mapState(['isLogin'])
+  }
+}
+</script>
 
 <style>
 #app {
