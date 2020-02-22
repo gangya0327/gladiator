@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="./2.double-bind.js"></script>
+    <script>
+        var vm = new vue()
+        setTimeout(() => {
+            console.log("change");
+            console.log(vm.$data);
+            vm.$data.a = 444
+        }, 2000);
+    </script>
+</body>
+
+</html>
