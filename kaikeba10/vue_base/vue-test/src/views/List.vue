@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex"
 export default {
   data() {
     return {
@@ -32,8 +33,11 @@ export default {
     }
   },
   methods: {
-    addCart() {
-      console.log("add");
+    ...mapMutations(["show", "addCartStore"]),
+    addCart(good) {
+      console.log("add", good);
+      this.show()
+      this.addCartStore(good)
     }
   },
 }

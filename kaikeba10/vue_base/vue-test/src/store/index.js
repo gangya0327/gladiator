@@ -5,11 +5,24 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    isLogin: false
+    isLogin: false,
+    goods: []
   },
   mutations: {
     login(state) {
       state.isLogin = true
+    },
+    show(state) {
+      console.log(state.goods);
+    },
+    addCartStore(state, good) {
+      let ret = state.goods.find(item => item.id === good.id)
+      if (ret) {
+        ret.count += 1
+      } else {
+        state.goods.push({ ...good, count: 1 })
+      }
+      console.log("store改变了 ", state.goods);
     }
   },
   actions: {
