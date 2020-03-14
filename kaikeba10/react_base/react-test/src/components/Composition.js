@@ -48,7 +48,7 @@ function RadioGroup(props) {
 }
 function Radio(props) {
   return (
-    <label htmlFor="">
+    <label>
       <input type="radio" name={props.name} />
       {props.children}
     </label>
