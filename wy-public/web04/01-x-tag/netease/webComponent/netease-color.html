@@ -1,0 +1,26 @@
+<template>
+    <style>
+        .color {
+            color: blue;
+        }
+    </style>
+    4444
+    <p>my color is <strong class="color">Red</strong></p>
+</template>
+<script>
+    console.log(111);
+
+    (function () { // 创建闭包
+        console.log(2221);
+        // var element = Object.create(HTMLElement.prototype) // 基于HTML元素的原型创建对象
+        // var template = document.currentScript.ownerDocument.querySelector('template').content
+        // element.createdCallback = function () {
+        //     var shadowRoot = this.createShadowRoot() // 创建shadow root结点
+        //     var clone = document.importNode(template, true)
+        //     shadowRoot.appendChild(clone) // 添加模板克隆对象到shadow root中
+        // }
+        // document.registerElement("netease-color", { // 注册新组件
+        //     prototype: element
+        // })
+    }());
+</script>

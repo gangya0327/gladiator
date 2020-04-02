@@ -1,0 +1,13 @@
+{
+  "name": "02-crawler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "iconv-lite": "^0.5.1"
+  }
+}

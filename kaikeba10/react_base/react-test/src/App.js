@@ -10,7 +10,8 @@ import style from "./App.module.css";
 // import Hoc from "./components/Hoc";
 // import Composition from './components/Composition'
 // import HookTest from "./components/HookTest";
-import HookTest2 from "./components/HookTest2";
+// import HookTest2 from "./components/HookTest2";
+import KFormTest from "./components/KFormTest";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       {/* <Hoc name="hoc"></Hoc> */}
       {/* <Composition></Composition> */}
       {/* <HookTest></HookTest> */}
-      <HookTest2></HookTest2>
+      <KFormTest></KFormTest>
     </div>
   );
 }
