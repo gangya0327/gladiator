@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>区域掩模</title>
+    <style>
+        body,
+        html,
+        #container {
+            margin: 0;
+            width: 100%;
+            height: 100%
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script language="javascript"
+        src="https://webapi.amap.com/maps?v=1.4.15&key=7a2365e3f2fb1a7823aeb3f6fbb98551&plugin=Map3D,AMap.DistrictSearch"></script>
+    <!-- <script language="javascript"
+        src="https://webapi.amap.com/maps?v=1.4.15&key=24fa91ebc13e82429b535e4c0c016a1a&plugin=Map3D,AMap.DistrictSearch"></script> -->
+    <script>
+        var opts = {
+            subdistrict: 0,
+            extensions: 'all',
+            level: 'city'
+        };
+        var district = new AMap.DistrictSearch(opts);
+        console.log('district', district);
+        district.search('嵊州市', function (status, result) {
+            console.log('status', status);
+            console.log('result', result);
+            var bounds = result.districtList[0].boundaries;
+            console.log('bounds', bounds);
+            var mask = []
+            for (var i = 0; i < bounds.length; i += 1) {
+                mask.push([bounds[i]])
+
+                var map = new AMap.Map('container', {
+                    mask,
+                    // center: [120.217434, 30.228318],
+                    // center: [120.074911, 29.317963],
+                    center: [120.82888, 29.586606],
+                    zoom: 11,
+                    pitch: 30,
+                    labelzIndex: 140,
+                    showLabel: true,
+                    viewMode: '3D',
+                })
+
+                var maskerIn = new AMap.Marker({
+                    center: [120.82888, 29.586606],
+                    map: map,
+                    title: `<h1>31231</h1>`,
+                })
+                maskerIn.setClickable(function(){
+                    console.log(1231);
+                    
+                })
+
+                for (var i = 0; i < bounds.length; i += 1) {
+                    new AMap.Polyline({
+                        path: bounds[i],
+                        strokeColor: 'blue',
+                        strokeWeight: 5,
+                        map: map
+                    })
+                }
+            }
+
+        })
+
+
+    </script>
+</body>
+
+</html>

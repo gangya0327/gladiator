@@ -1,7 +1,33 @@
 const express = require("express");
 const userRouter = require("./router/user_router");
+const models = require("../models"); // 模型对象
 
 const app = express();
+
+app.get("/create", async (req, res) => {
+  let { name } = req.query;
+  let user = await models.User.create({
+    name,
+  });
+  res.json({
+    user,
+  });
+});
+
+app.get("/list", async (req, res) => {
+  let list = await models.User.findAll();
+  res.json({ list });
+});
+
+app.get("/detail/:id", async (req, res) => {
+  let { id } = req.params;
+  let user = await models.User.findOne({
+    where: {
+      id,
+    },
+  });
+  res.json({ user });
+});
 
 app.use("/error", (req, res) => {
   throw new Error("异常处理");
@@ -13,7 +39,7 @@ function error_handler_middleware(err, req, res, next) {
     let { message } = err;
     res.status = 500;
     res.json({
-      message: `${message}` || "异常"
+      message: `${message}` || "异常",
     });
   } else {
     next();
@@ -22,7 +48,7 @@ function error_handler_middleware(err, req, res, next) {
 
 function notFound_handler(req, res, next) {
   res.json({
-    message: "api不存在"
+    message: "api不存在",
   });
 }
 
@@ -34,7 +60,7 @@ app.use("/user", userRouter);
 // 静态资源
 app.use(
   express.static("./static", {
-    extensions: ["html", "htm"]
+    extensions: ["html", "htm"],
   })
 );
 
@@ -49,7 +75,7 @@ function valid_name_middleware(req, res, next) {
   let { name } = req.query;
   if (!name || !name.length) {
     res.json({
-      message: "没有name参数"
+      message: "没有name参数",
     });
   } else {
     next();
@@ -62,7 +88,7 @@ app.get("/test/:age", (req, res) => {
   let { age } = req.params;
   res.json({
     name: "peter",
-    age
+    age,
   });
 });
 

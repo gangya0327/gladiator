@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 900px;
+            height: 780px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=24fa91ebc13e82429b535e4c0c016a1a&plugin=Map3D,AMap.DistrictSearch"></script>
+    <script src="./index.js"></script>
+    <!-- <script src="https://webapi.amap.com/loader.js"></script>
+    <script type="text/javascript">
+        var mask = []
+        AMapLoader.load({
+            key: "24fa91ebc13e82429b535e4c0c016a1a", //首次调用load必须填写key
+            version: '2.0',     //JSAPI 版本号
+            plugins: ['AMap.Scale']  //同步加载的插件列表
+        }).then((AMap) => {
+            var map = new AMap.Map('container', {
+                resizeEnable: true,
+                viewMode: '3D',
+                showLabel: false,
+                mask: mask,
+                center: [120.217434, 30.248318] //初始化地图中心点
+            });
+            map.addControl(new AMap.Scale())
+            var maskerIn = new AMap.Marker({
+                position: [120.117434, 30.298318],
+                map: map
+            })
+            var maskerOut = new AMap.Marker({//区域外的不会显示
+                position: [121.217434, 30.228318],
+                map: map
+            })
+        }).catch((e) => {
+            console.error(e);  //加载错误提示
+        });   
+    </script> -->
+</body>
+
+</html>
