@@ -18,7 +18,7 @@ class Clock extends Component {
     console.log(this.state.counter);
     /**
      * setState
-     * 批量执行
+     * 批量执行，多key一次执行，相同key合并
      * 可能是异步的，获取最新值的方法
      * 1）setState(cb)
      * 2）定时器：执行顺序

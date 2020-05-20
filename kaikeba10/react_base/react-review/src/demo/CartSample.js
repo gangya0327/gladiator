@@ -33,7 +33,7 @@ class CartSample extends Component {
   }
   componentDidMount() {
     setTimeout(() => {
-      this.setState({ title: "编程购物" });
+      this.setState({ title: "简易react购物" });
     }, 1000);
   }
   handleChange = (e) => {

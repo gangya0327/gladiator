@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.container .topbar {
+  height: 60px;
+  background-color: blue;
+}
+.container .center {
+  display: flex;
+}
+.container .center .sidebar {
+  width: 90px;
+}
