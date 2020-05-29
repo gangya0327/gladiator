@@ -7,6 +7,7 @@
           <span>￥{{good.price}}</span>
           <button @click.prevent.stop="addCart(good)">加入购物车</button>
         </router-link>
+        <button @click="abc()">click</button>
       </li>
     </ul>
   </div>
@@ -38,6 +39,9 @@ export default {
       console.log("add", good);
       this.show()
       this.addCartStore(good)
+    },
+    abc() {
+      console.log(4114)
     }
   },
 }
