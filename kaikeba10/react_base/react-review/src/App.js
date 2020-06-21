@@ -10,17 +10,29 @@ import { Button } from 'antd'
 import "./App.css";
 import CommentList from './demo/CommentList'
 import style from './App.module.css'
+import Hoc from './demo/Hoc'
+import Compositon from './demo/Compositon'
+import HookTest from './demo/HookTest'
+import HookTest2 from './demo/HookTest2'
+import AntdForm from './demo/AntdForm'
+import KFormTest from './demo/KFormTest'
 
 function App() {
   return (
     <div className={style.border}>
-      <JsxTest></JsxTest>
-      <ComType></ComType>
-      <StateTest></StateTest>
-      <CartSample></CartSample>
-      <Button type='primary'>but</Button>
-      <Container></Container>
+      <KFormTest />
+      <AntdForm />
+      <HookTest2 />
+      <HookTest />
+      <Compositon />
+      <Hoc stage='hoc' />
       <CommentList></CommentList>
+      <Container></Container>
+      <Button type='primary'>but</Button>
+      <CartSample></CartSample>
+      <StateTest></StateTest>
+      <ComType></ComType>
+      <JsxTest></JsxTest>
     </div>
   );
 }
