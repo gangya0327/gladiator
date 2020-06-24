@@ -17,6 +17,15 @@ export const loadingEnd = () => ({
   type: 'loading_end'
 })
 
+export const asyncFetch = payload => {
+  return dispatch => {
+    dispatch({ type: 'loading_start' })
+    setTimeout(() => {
+      dispatch({ type: 'loading_end' })
+      dispatch({ type: 'init', payload })
+    }, 1000);
+  }
+}
 
 // 将状态移至全局
 function fruitReducer(state = {

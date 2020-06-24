@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-import { loadingStart, loadingEnd, init, add } from '../store'
+import { loadingStart, loadingEnd, init, add, asyncFetch } from '../store'
 
 function FruitList({ fruits, setFruit }) {
   return (
@@ -24,15 +24,11 @@ function FruitAdd({ add }) {
   )
 }
 
-function HookTest({ fruits, loading, loadingStart, loadingEnd, init }) {
+function HookTest({ fruits, loading, asyncFetch }) {
   const [fruit, setFruit] = useState('草莓')
   useEffect(() => {
     console.log('get fruits...')
-    loadingStart()
-    setTimeout(() => {
-      loadingEnd()
-      init(['草莓', '香蕉'])
-    }, 1000);
+    asyncFetch(['草莓', '香蕉', '苹果'])
   }, [])
 
   useEffect(() => {
@@ -60,7 +56,8 @@ const mapDispatchToProps = {
   loadingStart,
   loadingEnd,
   init,
-  add
+  add,
+  asyncFetch
 }
 export default connect(
   mapStateToProps,
