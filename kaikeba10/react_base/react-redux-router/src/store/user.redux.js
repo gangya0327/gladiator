@@ -12,15 +12,19 @@ export default (state = initialState, action) => {
   }
 }
 
-export function login(user) {
-  return dispatch => {
-    dispatch({ type: 'requesLogin' })
-    setTimeout(() => {
-      if (Date.now() % 2 === 0) {
-        dispatch({ type: 'loginSuccess' })
-      } else {
-        dispatch({ type: 'loginFailure' })
-      }
-    }, 1000);
-  }
+export function login(uname) {
+  return { type: 'login', uname }
 }
+
+// export function login(user) {
+//   return dispatch => {
+//     dispatch({ type: 'requesLogin' })
+//     setTimeout(() => {
+//       if (Date.now() % 2 === 0) {
+//         dispatch({ type: 'loginSuccess' })
+//       } else {
+//         dispatch({ type: 'loginFailure' })
+//       }
+//     }, 1000);
+//   }
+// }
