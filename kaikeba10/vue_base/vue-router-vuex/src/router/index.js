@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import List from '../views/List.vue'
 import Detail from '../views/Detail.vue'
+import store from '../store'
 
 Vue.use(VueRouter)
 
@@ -43,7 +44,9 @@ router.beforeEach((to, from, next) => {
   // 判断是否登录
   console.log('router beforeEach')
   console.log('to', to)
-  if (to.path === '/about' && !window.isLogin) {
+  console.log('store', store.state.isLogin)
+  // if (!window.isLogin) {
+  if (to.path === '/about' && !store.state.isLogin) {
     next('/login?redirect=' + to.path)
   } else {
     next()
