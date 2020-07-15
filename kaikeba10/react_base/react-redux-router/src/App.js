@@ -1,5 +1,6 @@
 import React from 'react';
-import Hooks from './demo/Hooks'
+// import Hooks from './demo/Hooks'
+import GaodeMap from './demo/GaodeMap'
 
 import store from './store'
 import { Provider } from 'react-redux'
@@ -7,9 +8,10 @@ import { Provider } from 'react-redux'
 function App() {
   return (
     <div>
-      <Provider store={store}>
+      {/* <Provider store={store}>
         <Hooks />
-      </Provider>
+      </Provider> */}
+      <GaodeMap />
     </div>
   );
 }

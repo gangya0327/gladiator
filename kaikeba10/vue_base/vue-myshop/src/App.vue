@@ -8,28 +8,38 @@
     <transition name="route-move">
       <router-view class="child-view" />
     </transition>
-    <cube-tab-bar v-model="selectLabel" :data="tabs" @change="changeHandler"></cube-tab-bar>
+    <cube-tab-bar v-model="selectLabel" :data="tabs" @change="changeHandler">
+      <cube-tab v-for="(item,index) in tabs" :key="index" :icon="item.icon" :label="item.value">
+        <div>{{item.label}}</div>
+        <span class="badge" v-if="item.label==='Cart'">{{cartTotal}}</span>
+      </cube-tab>
+    </cube-tab-bar>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
       selectLabel: '/',
-      tabs: [{
-        label: 'Home',
-        value: '/',
-        icon: 'cubeic-home'
-      }, {
-        label: 'Cart',
-        value: '/cart',
-        icon: 'cubeic-mall'
-      }, {
-        label: 'Me',
-        value: '/about',
-        icon: 'cubeic-person'
-      }]
+      tabs: [
+        {
+          label: 'Home',
+          value: '/',
+          icon: 'cubeic-home'
+        },
+        {
+          label: 'Cart',
+          value: '/cart',
+          icon: 'cubeic-mall'
+        },
+        {
+          label: 'Me',
+          value: '/about',
+          icon: 'cubeic-person'
+        }
+      ]
     }
   },
   created() {
@@ -50,6 +60,11 @@ export default {
       this.$router.push(val)
     }
   },
+  computed: {
+    ...mapGetters(
+      ['cartTotal']
+    )
+  }
 }
 </script>
 
@@ -65,6 +80,19 @@ export default {
 
 .cube-tab-bar-slider {
   top: 0;
+}
+
+// 动画
+.route-move-enter { // 入场前状态
+  transform: translate3d(-100%, 0, 0);
+}
+
+.route-move-leave-to { // 离场后状态
+  transform: translate3d(100%, 0, 0);
+}
+
+.route-move-enter-active, .route-move-leave-active { // 激活状态
+  transition: transform 0.3s;
 }
 
 .child-view { // 添加到每个页面上的样式，确保页面间不挤占位置

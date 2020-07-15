@@ -10,7 +10,11 @@
     </cube-slide>
 
     <!-- 商品列表 -->
-    <good-list :data="goods"></good-list>
+    <!-- <good-list :data="goods" @cartanim="$refs.ca.start($event)"></good-list> -->
+    <good-list :data="goods" @cartanim="startCartAnim"></good-list>
+
+    <!-- 动画组件 -->
+    <!-- <cart-anim ref="ca"></cart-anim> -->
   </div>
 </template>
 
@@ -18,11 +22,13 @@
 // @ is an alias to /src
 import gs from '../services/goods'
 import GoodList from '../components/GoodList'
+// import CartAnim from '@/components/CartAnim'
 
 export default {
   name: 'Home',
   components: {
-    GoodList
+    GoodList,
+    // CartAnim
   },
   data() {
     return {
@@ -45,7 +51,17 @@ export default {
     goods() {
       return this.keys.flatMap(key => this.goodsInfo[key])
     }
-  }
+  },
+  methods: {
+    startCartAnim(el) {
+      const anim = this.$createCartAnim({
+        onTransitionend() {
+          anim.remove()
+        }
+      })
+      anim.start(el)
+    }
+  },
 }
 </script>
 

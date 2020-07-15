@@ -6,6 +6,13 @@ import store from './store'
 import router from './router'
 import interceptor from './interceptor'
 
+import { createAPI } from 'cube-ui'
+import CartAnim from '@/components/CartAnim'
+
+console.log('CartAnim', CartAnim)
+// 注册全局组件，$createCartAnim
+createAPI(Vue, CartAnim, ['transitionend'])
+
 Vue.config.productionTip = false
 
 const app = new Vue({

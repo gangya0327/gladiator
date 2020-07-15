@@ -25,7 +25,5 @@ export default ({
       localStorage.removeItem('token')
       commit('setLoginState', false)
     }
-  },
-  modules: {
   }
 })

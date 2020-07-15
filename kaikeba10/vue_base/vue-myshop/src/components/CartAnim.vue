@@ -1,0 +1,78 @@
+<template>
+  <div class="ball-wrap">
+    <transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter">
+      <div class="ball" v-show="show">
+        <div class="inner">
+          <div class="cubeic-add"></div>
+        </div>
+      </div>
+    </transition>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'CartAnim',
+  data() {
+    return {
+      show: false
+    }
+  },
+  methods: {
+    start(el) { // 启动动画接口，传递接口按钮元素
+      this.el = el
+      this.show = true // 使ball显示，激活动画钩子
+    },
+    beforeEnter(el) {
+      // 把小球移动到点击的dom元素所在位置
+      const rect = this.el.getBoundingClientRect()
+      // 转换为绝对定位的坐标
+      const x = rect.left - window.innerWidth / 2
+      const y = -(window.innerHeight - rect.top - 10 - 20)
+      // ball只移动y
+      el.style.transform = `translate3d(0, ${y}px, 0)`
+      // inner只移动x
+      const inner = el.querySelector('.inner')
+      inner.style.transform = `translate3d(${x}px, 0, 0)`
+    },
+    enter(el, done) {
+      // 获取offsetHeight就会重绘
+      document.body.offsetHeight
+      // 指定动画结束位置
+      el.style.transform = `translate3d(0, 0, 0)`
+      const inner = el.querySelector('.inner')
+      inner.style.transform = `translate3d(0, 0, 0)`
+      el.addEventListener('transitionend', done)
+    },
+    afterEnter(el) {
+      // 动画结束，开始清理工作
+      this.show = false
+      el.style.display = 'none'
+      this.$emit('transitionend')
+    }
+  },
+}
+</script>
+
+<style lang="stylus" scoped>
+.ball-wrap {
+  .ball {
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    z-index: 1000;
+    color: red;
+    transition: all 0.5s cubic-bezier(0.49, -0.29, 0.75, 0.41);
+
+    .inner {
+      width: 16px;
+      height: 16px;
+      transition: all 0.5s linear;
+
+      .cubic-add {
+        font-size: 22px;
+      }
+    }
+  }
+}
+</style>
