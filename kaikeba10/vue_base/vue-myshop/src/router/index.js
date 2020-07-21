@@ -5,7 +5,14 @@ import Login from '../views/Login.vue'
 import Mylogin from '../views/Mylogin'
 import Cart from '../views/Cart'
 
+import History from '@/utils/history'
+
 Vue.use(VueRouter)
+Vue.use(History)
+VueRouter.prototype.goBack = function () {
+  this.back()
+  this.isBack = true
+}
 
 const routes = [
   {
@@ -72,6 +79,17 @@ router.beforeEach((to, from, next) => {
     }
   } else {
     next()
+  }
+})
+
+router.afterEach((to) => {
+  if (router.isBack) {
+    History.pop()
+    router.isBack = false
+    router.transitionName = 'route-back'
+  } else {
+    History.push(to.path)
+    router.transitionName = 'route-forward'
   }
 })
 

@@ -1,7 +1,7 @@
 <template>
   <div class="ball-wrap">
     <transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter">
-      <div class="ball" v-show="show">
+      <div class="ball" v-show="show" :style="pos">
         <div class="inner">
           <div class="cubeic-add"></div>
         </div>
@@ -13,6 +13,7 @@
 <script>
 export default {
   name: 'CartAnim',
+  props: ['pos'],
   data() {
     return {
       show: false

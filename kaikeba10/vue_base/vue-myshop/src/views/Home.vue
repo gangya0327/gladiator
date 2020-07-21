@@ -1,5 +1,8 @@
 <template>
   <div class="home">
+    <k-header title="开课吧">
+      <i class="cubeic-tag"></i>
+    </k-header>
     <!-- 轮播图 -->
     <cube-slide ref="slide" :data="slider" :interval="5000">
       <cube-slide-item v-for="(item, index) in slider" :key="index">
@@ -22,13 +25,15 @@
 // @ is an alias to /src
 import gs from '../services/goods'
 import GoodList from '../components/GoodList'
-// import CartAnim from '@/components/CartAnim'
+import CartAnim from '@/components/CartAnim'
+import KHeader from '@/components/Header'
 
 export default {
   name: 'Home',
   components: {
     GoodList,
-    // CartAnim
+    // CartAnim,
+    KHeader
   },
   data() {
     return {
@@ -54,12 +59,19 @@ export default {
   },
   methods: {
     startCartAnim(el) {
-      const anim = this.$createCartAnim({
-        onTransitionend() {
-          anim.remove()
-        }
+      // const anim = this.$createCartAnim({
+      //   onTransitionend() {
+      //     anim.remove()
+      //   }
+      // })
+      // anim.start(el)
+
+      // 使用方式2
+      const anim = this.$create(CartAnim, {
+        pos: { left: '52%', bottom: '20px' }
       })
       anim.start(el)
+      anim.$on('transitionend', anim.remove)
     }
   },
 }

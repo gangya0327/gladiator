@@ -9,11 +9,14 @@ import interceptor from './interceptor'
 import { createAPI } from 'cube-ui'
 import CartAnim from '@/components/CartAnim'
 
-console.log('CartAnim', CartAnim)
+import create from '@/utils/create'
+
 // 注册全局组件，$createCartAnim
 createAPI(Vue, CartAnim, ['transitionend'])
 
 Vue.config.productionTip = false
+
+Vue.prototype.$create = create
 
 const app = new Vue({
   store,
