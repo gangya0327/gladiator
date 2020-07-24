@@ -32,3 +32,59 @@ function sayhello(name: string, age: number = 18, addr?: string): string {
 sayhello("peter");
 sayhello("peter", 21);
 sayhello("peter", 21, "china");
+
+// 重载：参数数量或者类型或者返回类型不同，函数名相同
+// 先声明后实现
+function info(a: object): string;
+function info(a: string): object;
+function info(a: any): any {
+  if (typeof a === "object") {
+    return a.name;
+  } else {
+    return { name: a };
+  }
+}
+info({ name: "tom" });
+info("tome");
+
+// class 面向对象
+class Shape {
+  public area: number;
+  protected color: string;
+  constructor(color: string, width: number, height: number) {
+    this.area = width * height;
+    this.color = color;
+  }
+  public shoutout() {
+    return (
+      "I'm " + this.color + " with an area of " + this.area + " cm squared."
+    );
+  }
+}
+
+class Square extends Shape {
+  constructor(color: string, side: number) {
+    super(color, side, side);
+    // console.log(this.color);
+  }
+  public shoutout() {
+    return "我是" + this.color + "面积是" + this.area + "平方厘米。";
+  }
+}
+
+const square = new Square("blue", 2);
+// console.log(square.shoutout());
+square.shoutout();
+
+// 接口
+interface Person {
+  firstName: string;
+  lastName: string;
+}
+function greeting1(person: Person) {
+  return "Hello, " + person.firstName + " " + person.lastName;
+}
+const user = { firstName: "peter", lastName: "jack" };
+// console.log(user);
+// console.log(greeting1(user));
+greeting1(user);
