@@ -7,6 +7,9 @@
       <router-link to="/about">
         <svg-icon icon-class="wechat" class-name="wechat"></svg-icon>About
       </router-link>
+      <router-link to="/test">
+        <svg-icon icon-class="wechat" class-name="wechat"></svg-icon>Test
+      </router-link>
     </div>
     <router-view />
   </div>

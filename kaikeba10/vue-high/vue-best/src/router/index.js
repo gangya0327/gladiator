@@ -15,6 +15,7 @@ export const constRoutes = [
     path: '/',
     component: Layout,
     redirect: '/home',
+    meta: { title: '首页', icon: 'qq' },
     children: [
       {
         path: 'home',
@@ -23,6 +24,11 @@ export const constRoutes = [
         meta: { title: 'Home', icon: 'qq' }
       }
     ]
+  },
+  {
+    path: '/test',
+    component: () => import('@/views/Test'),
+    name: 'test'
   }
 ]
 
@@ -37,7 +43,7 @@ export const asyncRoutes = [
         path: 'index',
         name: 'about',
         component: () => import('@/views/About'),
-        meta: { title: 'about', icon: 'qq', roles: ['admin', 'editor'] }
+        meta: { title: 'about', icon: 'wechat', roles: ['admin', 'editor'] }
       }
     ]
   }

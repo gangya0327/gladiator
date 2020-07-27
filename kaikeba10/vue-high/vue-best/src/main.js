@@ -7,6 +7,13 @@ import router from './router'
 import store from './store'
 Vue.component('svg-icon', SvgIcon)
 
+import Element from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(Element)
+
+// 路由守卫
+import '@/permission'
+
 Vue.config.productionTip = false
 
 new Vue({
