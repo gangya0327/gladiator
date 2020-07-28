@@ -1,4 +1,4 @@
-// commomjs nodejs
+// commomjs语法 nodejs
 const port = 7070
 const title = 'vue项目最佳实践'
 
