@@ -15,6 +15,7 @@ export const constRoutes = [
     path: "/",
     component: Layout,
     redirect: "/home",
+    meta: { title: "首页", icon: "badge" },
     children: [
       {
         path: "home",
@@ -23,6 +24,15 @@ export const constRoutes = [
         meta: {
           title: "Home",
           icon: "badge"
+        }
+      },
+      {
+        path: "bar",
+        component: () => import("@/views/Home"),
+        name: "bar",
+        meta: {
+          title: "Bar",
+          icon: "comp"
         }
       }
     ]

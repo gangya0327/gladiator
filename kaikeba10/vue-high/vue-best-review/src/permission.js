@@ -7,7 +7,6 @@ const whiteList = ["/login"];
 
 router.beforeEach(async (to, from, next) => {
   const hasToken = getToken();
-  console.log("hasToken", hasToken);
   if (hasToken) {
     // 有令牌
     if (to.path === "/login") {

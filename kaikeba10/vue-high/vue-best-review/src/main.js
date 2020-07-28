@@ -6,6 +6,10 @@ import store from "./store";
 import "@/icons";
 import "@/permission";
 
+import Element from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
+Vue.use(Element);
+
 Vue.config.productionTip = false;
 
 new Vue({

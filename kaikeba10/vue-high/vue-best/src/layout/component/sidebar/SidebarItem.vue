@@ -1,5 +1,5 @@
 <template>
-  <div class="menu-wrapper" v-if="!item.hiiden">
+  <div class="menu-wrapper" v-if="!item.hidden">
     <!-- 仅有一个可现实子路由，且该孩子路由没有孩子路由 -->
     <template
       v-if="hasOneShowingChild(item.children,item) &&
