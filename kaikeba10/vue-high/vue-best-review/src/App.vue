@@ -1,12 +1,37 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/home">
+        <svg-icon icon-class="badge" class-name="badge"></svg-icon>
+        Home</router-link
+      >
+      |
+      <router-link to="/about/index">
+        <svg-icon icon-class="comp" class-name="comp"></svg-icon
+        >About</router-link
+      >
     </div>
+
+    <svg>
+      <use xlink:href="#icon-comp" />
+    </svg>
+    <svg>
+      <use xlink:href="#icon-badge" />
+    </svg>
+    <svg>
+      <use xlink:href="#icon-integer" />
+    </svg>
+
     <router-view />
   </div>
 </template>
+
+<script>
+// import "@/icons/svg/badge.svg";
+// import "@/icons/svg/comp.svg";
+// import "@/icons/svg/integer.svg";
+export default {};
+</script>
 
 <style>
 #app {
