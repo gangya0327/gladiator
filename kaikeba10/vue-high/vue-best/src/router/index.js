@@ -22,6 +22,12 @@ export const constRoutes = [
         component: () => import("@/views/Home"),
         name: 'home',
         meta: { title: 'Home', icon: 'qq' }
+      },
+      {
+        path: 'bar',
+        component: () => import("@/views/Home"),
+        name: 'bar',
+        meta: { title: 'Bar', icon: 'qq', roles: ['editor'] }
       }
     ]
   },
@@ -43,7 +49,7 @@ export const asyncRoutes = [
         path: 'index',
         name: 'about',
         component: () => import('@/views/About'),
-        meta: { title: 'about', icon: 'wechat', roles: ['admin', 'editor'] }
+        meta: { title: 'about', icon: 'wechat', roles: ['admin'] }
       }
     ]
   }

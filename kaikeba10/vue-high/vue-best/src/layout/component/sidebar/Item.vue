@@ -19,15 +19,14 @@ export default {
     const vnodes = []
     // 如果有图标设置，则把vnode推入结果vnodes
     if (icon) {
+      // 用到了jsx语法
       vnodes.push(<svg-icon icon-class={icon} />)
     }
     if (title) {
+      // 用到了jsx语法
       vnodes.push(<span slot='title'>{title}</span>)
     }
     return vnodes
   }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>
