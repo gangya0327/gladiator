@@ -44,12 +44,13 @@ export const asyncRoutes = [
     path: "/about",
     component: Layout,
     redirect: '/about/index',
+    meta: { title: '用户中心', icon: 'wechat' },
     children: [
       {
         path: 'index',
         name: 'about',
         component: () => import('@/views/About'),
-        meta: { title: 'about', icon: 'wechat', roles: ['admin'] }
+        meta: { title: '关于我们', icon: 'wechat', roles: ['admin'] }
       }
     ]
   }
