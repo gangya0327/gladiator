@@ -11,6 +11,9 @@ import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(Element)
 
+import vPermission from '@/directive/permission'
+Vue.directive('permission', vPermission)
+
 // 路由守卫
 import '@/permission'
 

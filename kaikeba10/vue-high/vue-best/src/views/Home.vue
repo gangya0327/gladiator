@@ -1,6 +1,8 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
+    <button v-permission="['admin']">admin</button>
+    <button v-permission="['editor']">editor</button>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
