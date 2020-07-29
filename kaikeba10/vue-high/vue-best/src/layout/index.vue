@@ -1,8 +1,8 @@
 <template>
-  <div class='app-wrapper'>
-    <sidebar class='sidebar-container' />
+  <div class="app-wrapper">
+    <sidebar class="sidebar-container" />
     <div class="main-container">
-<breadcrumb/>
+      <breadcrumb />
       <router-view></router-view>
     </div>
   </div>

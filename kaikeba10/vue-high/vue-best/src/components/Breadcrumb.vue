@@ -1,25 +1,21 @@
 <template>
   <!-- element-ui提供的面包屑组件 -->
-  <el-breadcrumb class='app-breadcrumb' separator='/'>
-    <transition-group name='breadcrumb'>
-      <el-breadcrumb-item v-for='(item,index) in levelList' :key="item.path">
+  <el-breadcrumb class="app-breadcrumb" separator="/">
+    <transition-group name="breadcrumb">
+      <el-breadcrumb-item :key="item.path" v-for="(item,index) in levelList">
         <!-- 不能跳转，路由没有配置重定向或当前项已是最后一项 -->
         <span
-          v-if="item.redirect==='noRedirect'||index===levelList.length-1"
           class="no-redirect"
-        >
-          {{item.meta.title}}
-        </span>
-        <a v-else @click.prevent="handleLink(item)">
-          {{item.meta.title}}
-        </a>
+          v-if="item.redirect==='noRedirect'||index===levelList.length-1"
+        >{{item.meta.title}}</span>
+        <a @click.prevent="handleLink(item)" v-else>{{item.meta.title}}</a>
       </el-breadcrumb-item>
     </transition-group>
   </el-breadcrumb>
 </template>
 
 <script>
-import pathToRegexp from "path-to-regexp";
+import * as pathToRegexp from 'path-to-regexp';
 
 export default {
   data() {
@@ -28,16 +24,15 @@ export default {
     }
   },
   watch: {
-    $router: {
+    $route: {
       handler() {
         this.getBreadcrumb()
       },
-      immediate: true
+      immediate: true // 第一次绑定时也要执行handler
     }
   },
   methods: {
     getBreadcrumb() {
-      console.log(this.$route.matched);
       // 面包屑仅显示包含meta.title且item.meta.breadcrumb不为false的路由
       // /about/bla
       // matched: ['/', '/about', '/about/bal']
@@ -48,8 +43,7 @@ export default {
       const first = matched[0]
       // 根匹配只要不是home就作为home的下一级
       if (!this.isHome(first)) {
-        matched = [{ redirect: '/home', meta: { title: '首页' } }]
-          .concat(matched)
+        // matched = [{ redirect: '/home', meta: { title: '首页' } }].concat(matched)
       }
       // 处理完指定到levelList
       this.levelList = matched

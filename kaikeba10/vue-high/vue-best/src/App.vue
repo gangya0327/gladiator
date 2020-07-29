@@ -2,13 +2,13 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">
-        <svg-icon icon-class="qq" class-name="qq"></svg-icon>Home
+        <svg-icon class-name="qq" icon-class="qq"></svg-icon>Home
       </router-link>|
       <router-link to="/about">
-        <svg-icon icon-class="wechat" class-name="wechat"></svg-icon>About
+        <svg-icon class-name="wechat" icon-class="wechat"></svg-icon>About
       </router-link>
       <router-link to="/test">
-        <svg-icon icon-class="wechat" class-name="wechat"></svg-icon>Test
+        <svg-icon class-name="wechat" icon-class="wechat"></svg-icon>Test
       </router-link>
     </div>
     <router-view />

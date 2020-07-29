@@ -1,4 +1,5 @@
 import { getToken, setToken, removeToken } from '@/utils/auth'
+import { login, getInfo } from '@/api/user'
 
 // 存储用户令牌和用户信息
 const state = {
@@ -18,29 +19,37 @@ const mutations = {
 const actions = {
   // user login
   login({ commit }, userInfo) {
-    const { username } = userInfo
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (username === 'admin' || username === 'jerry') {
-          // 保存状态信息
-          commit("SET_TOKEN", username)
-          // 写入cookie
-          setToken(username)
-          resolve()
-        } else {
-          reject('用户名，密码错误')
-        }
-      }, 1000);
+    // const { username } = userInfo
+    // return new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     if (username === 'admin' || username === 'jerry') {
+    //       // 保存状态信息
+    //       commit("SET_TOKEN", username)
+    //       // 写入cookie
+    //       setToken(username)
+    //       resolve()
+    //     } else {
+    //       reject('用户名，密码错误')
+    //     }
+    //   }, 1000);
+    // })
+    return login(userInfo).then(res => {
+      commit("SET_TOKEN", res.data)
+      setToken(res.data)
     })
   },
   // get user info
   getInfo({ commit, state }) {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        const roles = state.token === 'admin' ? ['admin'] : ['editor']
-        commit("SET_ROLES", roles)
-        resolve({ roles })
-      }, 1000);
+    // return new Promise((resolve) => {
+    //   setTimeout(() => {
+    //     const roles = state.token === 'admin' ? ['admin'] : ['editor']
+    //     commit("SET_ROLES", roles)
+    //     resolve({ roles })
+    //   }, 1000);
+    // })
+    return getInfo(state.token).then(({ data: roles }) => {
+      commit("SET_ROLES", roles)
+      return { roles }
     })
   },
   resetToken({ commit }) {

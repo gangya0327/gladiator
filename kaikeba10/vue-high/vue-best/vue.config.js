@@ -8,10 +8,53 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
+const bodyParser = require('body-parser')
+
 module.exports = {
-  publicPath: "/best-practice",
+  publicPath: "/best-practice/",
   devServer: {
-    port
+    port,
+    proxy: {
+      [process.env.VUE_APP_BASE_API]: {
+        target: `http://127.0.0.1:3000/`,
+        changeOrigin: true, // 要不要变更origin头
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API]: "api"
+        }
+      }
+    },
+    before: app => {
+      // node服务器代码，基于express
+      // bodyParser用来解析post请求中json数据
+      app.use(bodyParser.json())
+      // app.use(
+      //   bodyParser.urlencoded({
+      //     extended: true
+      //   })
+      // )
+      // 接口声明
+      app.post('/dev-api/user/login', (req, res) => {
+        const { username } = req.body
+        if (username === 'admin' || username === 'jerry') {
+          res.json({
+            code: 1,
+            data: username
+          })
+        } else {
+          res.json({
+            code: 10204,
+            message: '用户名密码错误'
+          })
+        }
+      })
+      app.get('/dev-api/user/getInfo', (req, res) => {
+        const roles = req.headers['x-token'] === 'admin' ? ['admin'] : ['editor']
+        res.json({
+          code: 1,
+          data: roles
+        })
+      })
+    }
   },
   configureWebpack: {
     name: title

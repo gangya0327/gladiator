@@ -12,6 +12,7 @@ const store = new Vuex.Store({
   },
   getters: {
     roles: state => state.user.roles,
+    token: state => state.user.token,
     permission_routes: state => state.permission.routes
   }
 })
