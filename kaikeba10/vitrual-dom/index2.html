@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .item-header{
+      font-size: 18px;
+      color: #aeb;
+    }
+  </style>
+</head>
+<body>
+  <script src="./vdom2.js"></script>
+
+  <div id="app"></div>
+
+  <script>
+    let div = createElement('div', {id: 'test'}, [
+      createElement('p', {key: 'a', 'style': {'color': 'blue'}}, '节点1'),
+      createElement('p', {key: 'd', '@click': ()=>{alert(123)}}, '节点2'),
+      createElement('p', {key: 'c', 'class': 'item-header'}, '节点3'),
+      createElement('p', {key: 'd'}, '节点4')
+    ])
+    console.log('div', JSON.stringify(div,null,2))
+
+    let div1 = createElement('div', {id: 'test'}, [
+      createElement('p', {key: 'd', '@click': () => { alert(789) }}, '节点2'),
+      createElement('p', {key: 'a', 'style': {'color': 'red'}}, '节点1'),
+      createElement('p', {key: 'd'}, '节点4'),
+      createElement('p', {key: 'c', 'class': 'item-header'}, '节点3'),
+      createElement('p', {key: 'e'}, '节点5'),
+    ])
+    render(div, document.getElementById('app'))
+    setTimeout(() => {
+      render(div1, document.getElementById('app'))
+    }, 2000);
+  </script>
+</body>
+</html>

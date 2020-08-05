@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p class="item">节点1</p>
+  </div>
+
+  <script>
+    // js描述节点
+    function createElement() {
+      return {
+        tag: 'div',
+        data: {id: 'app'},
+        children: [
+          {
+            tag: 'p',
+            data: {class: 'item'},
+            children: ['节点1']
+          }
+        ]
+      }
+    }
+    // let div = document.createElement("div")
+    // let res = ''
+    // for(let key in div) {
+    //   res += key + ': ' + div[key] + '\n'
+    // }
+    // console.log(res)
+  </script>
+</body>
+</html>
