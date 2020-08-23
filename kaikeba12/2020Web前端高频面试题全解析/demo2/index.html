@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="http://www.baidu.com" target="">Baidu</a>
+    <a href="mailto:king9999427@163.com">163 email</a>
+    <table border="1">
+      <caption>
+        示例表格
+      </caption>
+      <thead>
+        <tr>
+          <th>项目</th>
+          <th>内容</th>
+          <th>数量</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>JavaScript精华</td>
+          <td>实战讲义</td>
+          <td>231本</td>
+        </tr>
+        <tr>
+          <td>Vue3.0核心</td>
+          <td>视频课程</td>
+          <td>65课</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+
+    <table width="100%" border="1">
+      <colgroup span="2" align="center">
+        <col style="background-color: red;" width="100px" />
+        <col style="background-color: green;" width="300px" />
+      </colgroup>
+      <colgroup>
+        <col style="background-color: hotpink; color: #0000ff; font-size: 26px;" align="center" />
+      </colgroup>
+      <tr>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td rowspan="2">11343806</td>
+        <td>My first Vue</td>
+        <td>$92</td>
+      </tr>
+      <tr>
+        <!-- <td>3476896</td> -->
+        <td>My first HTML</td>
+        <td>$53</td>
+      </tr>
+      <tr>
+        <td>2489604</td>
+        <td>My first CSS</td>
+        <td>$47</td>
+      </tr>
+    </table>
+    <br />
+
+    <table width="100%" border="1">
+      <colgroup span="2" align="center">
+        <col style="background-color: red;" width="100px" />
+        <col style="background-color: green;" width="300px" />
+      </colgroup>
+      <colgroup>
+        <col style="background-color: hotpink; color: #0000ff; font-size: 26px;" align="center" />
+      </colgroup>
+      <tr>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td colspan="2">11343806</td>
+        <!-- <td>My first Vue</td> -->
+        <td>$92</td>
+      </tr>
+      <tr>
+        <td>3476896</td>
+        <td>My first HTML</td>
+        <td>$53</td>
+      </tr>
+      <tr>
+        <td>2489604</td>
+        <td>My first CSS</td>
+        <td>$47</td>
+      </tr>
+    </table>
+    <br />
+
+    <table>
+      <tr>
+        <th scope="col">姓名</th>
+        <th scope="col">学号</th>
+        <th scope="col">性别</th>
+      </tr>
+      <tr>
+        <th scope="row">张三</th>
+        <td>001</td>
+        <td>男</td>
+      </tr>
+      <tr>
+        <th scope="row">李四</th>
+        <td>002</td>
+        <td>男</td>
+      </tr>
+    </table>
+    <br />
+
+    <table>
+      <tr>
+        <th>姓名</th>
+        <th>班级</th>
+        <th>学号</th>
+      </tr>
+      <tr>
+        <th>张三</th>
+        <td>四年八班</td>
+        <td>24</td>
+      </tr>
+      <tr>
+        <th>赵五</th>
+        <td>一年二班</td>
+        <td>12</td>
+      </tr>
+    </table>
+    <br />
+
+    <form action="https://example.com/api" method="post">
+      <label for="POST-name">用户名：</label>
+      <input id="POST-name" type="text" name="user" />
+      <input type="submit" value="提交" />
+    </form>
+    <br />
+
+    <fieldset>
+      <legend>学生情况登记</legend>
+      <p>年龄：<input type="text" name="age" /></p>
+      <p>性别：<input type="text" name="gender" /></p>
+    </fieldset>
+    <br />
+
+    <input type="search" id="mySearch" name="q" placeholder="输入搜索词……" required />
+    <input type="submit" value="搜索" />
+    <br />
+
+    <label for="pet-select">宠物：</label>
+    <select id="pet-select" name="pet-select">
+      <option value="">--请选择一项--</option>
+      <option value="dog">狗</option>
+      <option value="cat" selected>猫</option>
+      <option value="others">其他</option>
+    </select>
+    <br />
+
+    <label
+      >宠物：
+      <select name="pets" multiple size="4">
+        <optgroup label="四条腿的宠物">
+          <option value="dog">狗</option>
+          <option value="cat">猫</option>
+        </optgroup>
+        <optgroup label="鸟类">
+          <option value="parrot">鹦鹉</option>
+          <option value="thrush">画眉</option>
+        </optgroup>
+      </select>
+    </label>
+    <br />
+
+    <label for="ice-cream-choice">冰淇淋：</label>
+    <input type="text" list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+
+    <datalist id="ice-cream-flavors">
+      <option value="巧克力"> </option>
+      <option value="椰子"> </option>
+      <option value="薄荷"> </option>
+      <option value="草莓"> </option>
+      <option value="香草"> </option>
+    </datalist>
+    <br />
+
+    <label for="ice-cream-choice">材料：</label>
+    <input type="text" list="ide" id="ice-cream-choice" name="ice-cream-choice" />
+    <datalist id="ide">
+      <option value="Brackets" label="by Adobe"> </option>
+      <option value="Coda" label="by Panic"> </option>
+    </datalist>
+    <br />
+
+    <input type="number" name="a" value="10" /> + <input type="number" name="b" value="10" /> =
+    <output name="result">20</output>
+    <br />
+
+    <progress id="file" max="100" value="70"> 70% </progress>
+    <br>
+
+    <p>烤箱的当前温度是<meter min="200" max="500"
+      value="350"> 350 度</meter>。</p>
+      <br>
+
+      <dialog open>
+        Hello world
+      </dialog>
+      <br>
+
+      <details>
+        这是一段解释文本。
+        </details>
+  </body>
+</html>
