@@ -18,9 +18,12 @@
 import KInput from './KInput'
 import KFormItem from './KFormItem'
 import KForm from './KForm'
+import Notice from '../notice'
+import create from '@/utils/create'
+
 export default {
   components: {
-    KInput, KFormItem, KForm
+    KInput, KFormItem, KForm,
   },
   inheritAttrs: false, // 阻止顶层元素继承
   data() {
@@ -37,12 +40,25 @@ export default {
   },
   methods: {
     onLogin() {
+      // 创建弹窗实例
+      let notice
       this.$refs.loginForm.validate((isValid) => {
         if (isValid) {
-          alert('login success')
+          // alert('login success')
+          notice = create(Notice, {
+            title: 'xxx',
+            message: 'login success',
+            duration: 3000
+          })
         } else {
-          alert('error')
+          // alert('error')
+          notice = create(Notice, {
+            title: 'xxx',
+            message: 'error',
+            duration: 3000
+          })
         }
+        notice.show()
       })
     }
   },
