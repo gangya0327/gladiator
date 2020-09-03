@@ -33,7 +33,7 @@ const router = new VueRouter({
 
 // beforeEnter 路由级守卫
 // beforeRouteEnter 组件级守卫
-// 全局守卫
+// beforeEach 全局守卫
 router.beforeEach((to, from, next) => {
   if (to.meta.auth && !window.isLogin) {
     if (window.confirm('请登录')) {
