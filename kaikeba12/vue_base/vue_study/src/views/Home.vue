@@ -6,6 +6,7 @@
     <HelloWorld msg="Welcome to Your Vue.js App" />
     <k-form />
     <k-tree />
+    <comp />
   </div>
 </template>
 

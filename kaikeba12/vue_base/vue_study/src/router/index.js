@@ -9,10 +9,6 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    children: [
-      { path: '/list', name: 'List', component: () => import('../views/List') },
-      { path: '/detail/:id', name: 'Detail', component: () => import('../views/Detail'), props: true },
-    ]
   },
   {
     path: '/about',
@@ -22,6 +18,15 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/list',
+    name: 'List',
+    component: () => import('../views/List'),
+    children: [
+      // { path: '/list', name: 'List', component: () => import('../views/List') },
+      { path: '/detail/:id', name: 'Detail', component: () => import('../views/Detail'), props: true },
+    ]
   }
 ]
 
@@ -43,6 +48,7 @@ router.beforeEach((to, from, next) => {
       next('/') // 放弃返回首页
     }
   } else {
+    console.log(to)
     next() // 不需要登录，直接跳转
   }
 })
