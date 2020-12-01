@@ -21,7 +21,7 @@ export default {
   components: {
     HelloWorld,
     KForm,
-    KTree
+    KTree,
   }
 }
 </script>

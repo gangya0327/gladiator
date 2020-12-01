@@ -27,6 +27,16 @@ const routes = [
       // { path: '/list', name: 'List', component: () => import('../views/List') },
       { path: '/detail/:id', name: 'Detail', component: () => import('../views/Detail'), props: true },
     ]
+  },
+  {
+    path: '/vuex',
+    name: 'Vuex',
+    component: () => import('../views/VuexTest')
+  },
+  {
+    path: '/kvuex',
+    name: 'KVuex',
+    component: () => import('../views/KVuexTest')
   }
 ]
 
